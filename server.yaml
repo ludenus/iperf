@@ -1,0 +1,16 @@
+---
+version: "3"
+services:
+
+  iperf-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ludenus/iperf:latest
+    environment:
+      IPERF_OPTS: ""
+      IPERF_INTERVAL: "2"
+      IPERF_TIME_SECONDS: "100"
+    ports:
+      - "15001:5001"
+    entrypoint: /iperf-server.sh
