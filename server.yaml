@@ -3,9 +3,6 @@ version: "3"
 services:
 
   iperf-server:
-    build:
-      context: ./
-      dockerfile: Dockerfile
     image: ludenus/iperf:latest
     environment:
       IPERF_OPTS: ""
