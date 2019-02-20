@@ -2,4 +2,5 @@
 
 env|sort
 
-iperf --server --interval ${IPERF_INTERVAL} --time ${IPERF_TIME_SECONDS} ${IPERF_OPTS}
+set -x
+iperf --server --interval ${IPERF_SERVER_INTERVAL} --time ${IPERF_SERVER_TIME_SECONDS} ${IPERF_SERVER_OPTS}

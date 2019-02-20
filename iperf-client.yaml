@@ -1,0 +1,18 @@
+---
+version: "3"
+services:
+
+  iperf-client:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ludenus/iperf:latest
+    environment:
+      IPERF_CLIENT_OPTS: "${IPERF_CLIENT_OPTS}"
+      IPERF_CLIENT_INTERVAL: "${IPERF_CLIENT_INTERVAL}"
+      IPERF_CLIENT_TIME_SECONDS: "${IPERF_CLIENT_TIME_SECONDS}"
+      IPERF_CLIENT_TARGET_HOST: "${IPERF_CLIENT_TARGET_HOST}"
+      IPERF_CLIENT_TARGET_PORT: "${IPERF_CLIENT_TARGET_PORT}"
+    ports:
+      - "15002:5002"
+    entrypoint: /iperf-client.sh
